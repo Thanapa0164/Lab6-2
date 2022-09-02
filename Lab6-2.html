@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+    function cal(){
+    var num1 = parseInt(document.getElementById("num1").value);
+    var num2 = parseInt(document.getElementById("num2").value);
+    const select = document.querySelector('select');
+    const operator = select.value;
+    if(operator == 'plus'){
+        result = num1+num2;
+    }else if(operator == 'minus'){
+        result = num1-num2;
+    }else if(operator == 'multiply'){
+        result = num1*num2;
+    }else if(operator == 'divide'){
+        result = num1/num2;
+    }else {result = 'Error';
+    }
+    document.getElementById("result").value = result;
+    }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="num1">
+        <select id="operator">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <input type="text" id="num2">
+        <label>=</label>
+        <input type="text" id="result">
+        <input type="button" id="sum" value="Compute" onclick="cal()">
+    </form>
+    
+</body>
+</html>
